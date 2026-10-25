@@ -1,0 +1,8 @@
+00:00:00 In today's lecture on Natural Language Processing, we will explore transformers and neural attention mechanisms.
+00:00:15 Attention allows models to dynamically weigh the relevance of each token in a sentence relative to all other tokens.
+00:00:32 Before self-attention, recurrent neural networks struggled with long-range dependencies because gradients vanished.
+00:00:50 The transformer architecture introduced positional encodings to preserve word order without sequential recurrence.
+00:01:08 Self-attention computes query, key, and value matrices to determine attention weights across the vocabulary.
+00:01:25 In modern architectures like BERT and GPT, multi-head attention enables the network to attend to information at different representation subspaces.
+00:01:42 Pre-training on massive corpora followed by fine-tuning on downstream tasks is now the standard paradigm in modern AI.
+00:02:00 Extractive summarization and token classification provide actionable insights into large scale lecture recordings.

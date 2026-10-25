@@ -1,17 +1,21 @@
-import axios from "axios/index";
-export const SimilarWords = (words) => {
+import axios from "axios";
+
+export const SimilarWords = async (words) => {
     const payload = {
         words: words
-    }
+    };
     const headers = {
         "accept": "application/json",
         "Content-Type": "application/json; charset=utf-8"
+    };
+    try {
+        const res = await axios.post(`/api/ytb-similarwords-01`, payload, {headers: headers});
+        if (res.data !== null && typeof res.data === 'object') {
+            return res.data;
+        }
+        return {};
+    } catch (err) {
+        console.error("Error fetching similar words:", err);
+        return {};
     }
-    return axios.post(`https://ytb-api.azurewebsites.net/api/ytb-similarwords-01`, payload, {headers: headers})
-        .then(res => {
-            console.log(res);
-            if (res.data !== null)
-                return res.data;
-            else return {};
-        }).catch(err => console.log(err));
-}
+};
